@@ -1,9 +1,7 @@
-// export { default as Footer } from './Footer';
-
 export default function Footer() {
   return (
     <footer>
-      <p>Future World</p>
+      <p className='p-4 text-center text-white'>Future Store</p>
     </footer>
   );
 }

@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-commerce con Next.js e Integración con Shopify
 
-## Getting Started
+Este proyecto es una aplicación web de comercio electrónico desarrollada utilizando Next.js, TypeScript e integrada con Shopify.
 
-First, run the development server:
+## Características:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Framework Next.js:** Aprovechando el poder de Next.js para el renderizado del lado del servidor, la generación de sitios estáticos y la navegación sin problemas del lado del cliente, lo que resulta en páginas de carga rápida y una experiencia de usuario fluida.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Integración con Shopify:** Integración perfecta con Shopify, una plataforma líder de comercio electrónico, que permite la gestión fácil de productos, colecciones, pedidos y datos de clientes directamente desde el panel de Shopify.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Visualización de Productos:** Mostrando productos de Shopify de manera intuitiva y visualmente atractiva, permitiendo a los usuarios explorar y descubrir productos sin esfuerzo.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Filtrado por Categoría:** Implementación de funcionalidad de filtrado por categoría, permitiendo a los usuarios refinar su búsqueda de productos según categorías específicas, mejorando la experiencia de navegación y facilitando el descubrimiento de productos.
 
-## Learn More
+## Cómo Empezar:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clonar el Repositorio:** Clona este repositorio en tu máquina local usando `git clone`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Instalar Dependencias:** Ejecuta `pnpm install` para instalar todas las dependencias necesarias.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Configuración:** Configura tu tienda Shopify y obtén credenciales de API. Copia el archivo .env.example hacia .env y actualízalo con los detalles de tu tienda Shopify.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Iniciar Servidor de Desarrollo:** Ejecuta `pnpm dev` para iniciar el servidor de desarrollo y acceder a la aplicación en tu navegador desde [http://localhost:3000](http://localhost:3000).

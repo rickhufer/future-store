@@ -6,7 +6,7 @@ export const getCollections = async () => {
   try {
     const response = await fetch(shopifyUrls.collections.all, {
       headers: new Headers({
-        "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
+        "X-Shopify-Access-Token": env.SHOPIFY_TOKEN,
       }),
     });
 
@@ -32,7 +32,7 @@ export const getCollectionProducts = async (collection_id: string) => {
       shopifyUrls.collections.products(collection_id),
       {
         headers: new Headers({
-          "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
+          "X-Shopify-Access-Token": env.SHOPIFY_TOKEN,
         }),
       }
     );

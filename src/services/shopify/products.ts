@@ -10,7 +10,7 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
 
     const response = await fetch(apiUrl, {
       headers: new Headers({
-        "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
+        "X-Shopify-Access-Token": env.SHOPIFY_TOKEN,
       }),
     });
 
@@ -38,8 +38,9 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
 export const getMainProducts = async () => {
   const response = await fetch(shopifyUrls.products.mainProducts, {
     headers: new Headers({
-      "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
+      "X-Shopify-Access-Token": env.SHOPIFY_TOKEN,
     }),
+    cache: "force-cache",
     next: {
       tags: ["main-products"],
     },
@@ -47,7 +48,6 @@ export const getMainProducts = async () => {
     //   revalidate: 10,
     // },
     // cache: "no-cache",
-    // cache: "force-cache",
   });
   const { products } = await response.json();
 

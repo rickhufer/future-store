@@ -1,4 +1,4 @@
-export default function Hero() {
+export function Hero() {
   return (
     <section className='m-20'>
       <h1 className='mb-4 mt-12 bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-center text-8xl font-bold tracking-wider text-transparent'>

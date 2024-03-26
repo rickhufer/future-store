@@ -2,18 +2,54 @@ import { env } from "@/config/env";
 
 import { shopifyUrls } from "./urls";
 
-export const getProducts = async () => {
+export const getProducts = async (id?: string): Promise<ProductType[]> => {
   try {
-    const response = await fetch(shopifyUrls.products.all, {
+    const apiUrl = id
+      ? `${shopifyUrls.products.all}?ids=${id}`
+      : shopifyUrls.products.all;
+
+    const response = await fetch(apiUrl, {
       headers: new Headers({
         "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
       }),
     });
 
-    const data = await response.json();
+    const { products } = await response.json();
 
-    return data.products;
+    const transformedProducts = products.map((product: any) => {
+      return {
+        id: product.id,
+        gql_id: product.variants[0].admin_graphql_api_id,
+        title: product.title,
+        description: product.body_html,
+        price: product.variants[0].price,
+        image: product.images[0].src,
+        quantity: product.variants[0].inventory_quantity,
+        handle: product.handle,
+        tags: product.tags,
+      };
+    });
+    return transformedProducts;
   } catch (error) {
     console.log(error);
   }
+};
+
+export const getMainProducts = async () => {
+  const response = await fetch(shopifyUrls.products.mainProducts, {
+    headers: new Headers({
+      "X-Shopify-Access-Token": env.SHOPIFY_TOKEN || "",
+    }),
+    next: {
+      tags: ["main-products"],
+    },
+    // next: {
+    //   revalidate: 10,
+    // },
+    // cache: "no-cache",
+    // cache: "force-cache",
+  });
+  const { products } = await response.json();
+
+  return products;
 };

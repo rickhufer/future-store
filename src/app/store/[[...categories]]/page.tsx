@@ -13,15 +13,22 @@ interface CategoryProps {
   searchParams?: { [key: string]: string };
 }
 
+interface Collections {
+  id: number;
+  title: string;
+  handle: string;
+}
+
 export default async function page(props: CategoryProps) {
   let products = [];
 
   const { categories } = props.params;
   const collections = await getCollections();
+  console.log("COLLL: ", collections);
 
   if (categories?.length === 1) {
     const selectedCollection = collections.find(
-      (collection) => collection.handle === categories[0]
+      (collection: Collections) => collection.handle === categories[0]
     );
     products = await getCollectionProducts(selectedCollection.id);
   } else {

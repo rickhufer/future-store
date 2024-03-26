@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getProducts } from "@/services/shopify/products";
+import { getMainProducts } from "@/services/shopify/products";
 
-export default async function MainProducts() {
-  const products = await getProducts();
+export async function MainProducts() {
+  const products = await getMainProducts();
 
   return (
     <section>
@@ -10,7 +10,7 @@ export default async function MainProducts() {
         ✨ New products released!
       </h3>
       <div className='text-1xl grid grid-cols-2 text-white'>
-        {products.map((product: Product) => (
+        {products.map((product: any) => (
           <article className='relative z-10 h-56 min-h-10' key={product.id}>
             <p className='absolute right-6 top-0 z-20 text-right'>
               {product.title}

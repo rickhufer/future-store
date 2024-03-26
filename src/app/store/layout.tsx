@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getCollections } from "@/services/shopify/collections";
 
-export default async function layout({
+export default async function Layout({
   children,
 }: {
   children: React.ReactNode;

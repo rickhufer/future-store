@@ -1,2 +1,2 @@
-export { default as ProductCard } from "@/components/store/ProductCard";
-export { default as ProductsWrapper } from "@/components/store/ProductsWrapper";
+export { ProductCard } from "@/components/store/product-card";
+export { ProductsWrapper } from "@/components/store/products-wrapper";

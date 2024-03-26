@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCard({ product }: { product: ProductType }) {
+export function ProductCard({ product }: { product: ProductType }) {
   return (
     <Link
       href={`/articulo/${product.handle}?id=${product.id}`}

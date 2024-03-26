@@ -1,3 +1,3 @@
-export default function index() {
+export function Loader() {
   return <div>Cargando...</div>;
 }

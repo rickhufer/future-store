@@ -1,3 +1,3 @@
-export { default as Description } from '@/components/home/Description';
-export { default as Hero } from '@/components/home/Hero';
-export { default as MainProducts } from '@/components/home/MainProducts';
+export { Description } from "@/components/home/description";
+export { Hero } from "@/components/home/hero";
+export { MainProducts } from "@/components/home/main-products";

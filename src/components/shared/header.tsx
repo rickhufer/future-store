@@ -1,8 +1,9 @@
-// export { default as Header } from './Header';
-
 import Link from "next/link";
+import { validateAccessToken } from "@/utils/auth/validate-access-token";
 
-export function Header() {
+export async function Header() {
+  const customer = await validateAccessToken();
+
   return (
     <header className='m-auto max-w-5xl'>
       <nav>
@@ -14,6 +15,11 @@ export function Header() {
             <li className='p-4'>Store</li>
           </Link>
         </ul>
+        {customer?.firstName ? (
+          <p className='text-white'>Hola {customer.firstName}</p>
+        ) : (
+          <Link href='/login'>Login</Link>
+        )}
       </nav>
     </header>
   );

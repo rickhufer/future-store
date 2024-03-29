@@ -24,7 +24,6 @@ export default async function page(props: CategoryProps) {
 
   const { categories } = props.params;
   const collections = await getCollections();
-  console.log("COLLL: ", collections);
 
   if (categories?.length === 1) {
     const selectedCollection = collections.find(

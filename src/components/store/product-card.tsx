@@ -4,7 +4,7 @@ import Link from "next/link";
 export function ProductCard({ product }: { product: ProductType }) {
   return (
     <Link
-      href={`/articulo/${product.handle}?id=${product.id}`}
+      href={`/product/${product.handle}?id=${product.id}`}
       className='cursor-pointer text-white'
     >
       <article className='relative flex flex-col'>

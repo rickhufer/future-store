@@ -28,10 +28,14 @@ export function ProductViewItemsOrder({
 
   return (
     <div className='mt-8 grid grid-cols-[auto,1fr] gap-5'>
-      <div className='flex w-fit flex-row flex-nowrap items-center gap-y-2 rounded-lg border-purple-500'>
-        <button onClick={handleSubtract}>-</button>
+      <div className='flex w-fit flex-row flex-nowrap items-center gap-y-2 rounded-lg border-purple-500 bg-slate-700'>
+        <button className='px-6 py-3 text-purple-500' onClick={handleSubtract}>
+          -
+        </button>
         <p>{counter}</p>
-        <button onClick={handleAdd}>+</button>
+        <button className='px-6 py-3 text-purple-500' onClick={handleAdd}>
+          +
+        </button>
       </div>
       <div className='w-full'>
         <button

@@ -31,7 +31,8 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
     });
     return transformedProducts;
   } catch (error) {
-    console.log(error);
+    console.log("Error obteniendo productos:", error);
+    throw new Error("Error al obtener productos");
   }
 };
 

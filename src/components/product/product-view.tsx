@@ -25,7 +25,7 @@ export function ProductView({ product }: { product: ProductType }) {
           quality={80}
           alt={product.title}
           className='rounded-lg object-cover'
-          priority
+          priority={true}
         />
       </section>
       <section className='flex flex-col text-white'>

@@ -1,26 +1,46 @@
 import Link from "next/link";
 import { validateAccessToken } from "@/utils/auth/validate-access-token";
 
+import { ShoppingCart } from "./shopping-cart";
+
 export async function Header() {
   const customer = await validateAccessToken();
 
   return (
-    <header className='m-auto max-w-5xl'>
+    <header className='flex flex-row flex-nowrap items-center py-0 text-white'>
       <nav>
-        <ul className='flex justify-center gap-4 text-violet-600'>
-          <Link href='/'>
-            <li className='p-4'>Home</li>
-          </Link>
-          <Link href='/store'>
-            <li className='p-4'>Store</li>
-          </Link>
+        <ul className='mx-auto my-8 flex list-none flex-row flex-nowrap justify-center gap-x-4'>
+          <li>
+            <Link
+              className='p-2 py-2 text-xl font-normal text-white no-underline'
+              href='/'
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className='p-2 py-2 text-xl font-normal text-white no-underline'
+              href='/store'
+            >
+              Store
+            </Link>
+          </li>
         </ul>
-        {customer?.firstName ? (
-          <p className='text-white'>Hola {customer.firstName}</p>
-        ) : (
-          <Link href='/login'>Login</Link>
-        )}
       </nav>
+      <div className='ml-auto flex flex-row flex-nowrap items-center gap-4'>
+        {customer?.firstName ? (
+          <p>Hola! {customer.firstName}</p>
+        ) : (
+          <Link
+            className='flex cursor-pointer items-center text-xl font-normal text-white no-underline'
+            href='/login'
+          >
+            Login
+          </Link>
+        )}
+        <ShoppingCart />
+      </div>
     </header>
   );
 }

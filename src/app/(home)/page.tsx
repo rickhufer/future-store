@@ -2,6 +2,8 @@ import { title } from "process";
 
 import { Description, Hero, MainProducts } from "@/components/home";
 
+export const runtime = "edge";
+
 export const metadata = {
   title: "Future Store",
   description: "The future of shopping is here.",

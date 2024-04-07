@@ -19,6 +19,8 @@ interface Collections {
   handle: string;
 }
 
+export const runtime = "edge";
+
 export default async function page(props: CategoryProps) {
   let products = [];
 

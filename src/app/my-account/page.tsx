@@ -1,5 +1,7 @@
 import { LogoutButton } from "@/components/shared";
 
+export const runtime = "edge";
+
 export default async function MyAccountPage() {
   return (
     <div>

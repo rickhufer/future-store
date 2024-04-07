@@ -11,6 +11,8 @@ interface ProductPageProps {
   };
 }
 
+export const runtime = "edge";
+
 export async function generateMetadata({ searchParams }: ProductPageProps) {
   const id = searchParams.id;
   const products = await getProducts(id);

@@ -14,6 +14,8 @@ type OrderType = {
   };
 };
 
+export const runtime = "edge";
+
 export default async function MyAccountPage() {
   const ordersInfo = await getCustomerOrders();
   return (

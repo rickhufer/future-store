@@ -1,8 +1,6 @@
 "use client";
 
 export default function Error({ error, reset }: ErrorPageProps) {
-  // console.log("Error: ", error);
-
   return (
     <div className='p-20 text-center text-white'>
       <h1>🥹</h1>

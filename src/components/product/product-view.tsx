@@ -41,8 +41,12 @@ export function ProductView({ product }: { product: ProductType }) {
         </SanitizeHTML>
         <span className='text-3xl font-bold text-slate-500'>
           $ {product.price}
+          <i className='ml-6 text-xs'>(Quedan {product.quantity})</i>
         </span>
-        <ProductViewItemsOrder maxQuantity={product.quantity} />
+        <ProductViewItemsOrder
+          maxQuantity={product.quantity}
+          product={product}
+        />
       </section>
     </main>
   );

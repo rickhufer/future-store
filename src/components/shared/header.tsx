@@ -1,7 +1,10 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { validateAccessToken } from "@/utils/auth/validate-access-token";
 
-import { ShoppingCart } from "./shopping-cart";
+const NoSSRShoppingCart = dynamic(() => import("./shopping-cart"), {
+  ssr: false,
+});
 
 export async function Header() {
   const customer = await validateAccessToken();
@@ -30,7 +33,7 @@ export async function Header() {
       </nav>
       <div className='ml-auto flex flex-row flex-nowrap items-center gap-4'>
         {customer?.firstName ? (
-          <p>Hola! {customer.firstName}</p>
+          <Link href='/my-account'>Hola! {customer.firstName}</Link>
         ) : (
           <Link
             className='flex cursor-pointer items-center text-xl font-normal text-white no-underline'
@@ -39,7 +42,7 @@ export async function Header() {
             Login
           </Link>
         )}
-        <ShoppingCart />
+        <NoSSRShoppingCart />
       </div>
     </header>
   );

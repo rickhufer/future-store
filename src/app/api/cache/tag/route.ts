@@ -2,6 +2,8 @@ import { revalidateTag } from "next/cache";
 
 import { env } from "@/config/env";
 
+export const runtime = "edge";
+
 export async function POST(request: Request) {
   const body = await request.json();
   const { tag, token } = body;

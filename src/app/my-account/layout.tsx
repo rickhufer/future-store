@@ -6,8 +6,6 @@ interface MyAccountLayoutProps {
   userInfo: React.ReactNode;
 }
 
-export const runtime = "edge";
-
 export default async function MyAccountLayout(props: MyAccountLayoutProps) {
   return (
     <div className='mx-auto my-0 max-w-5xl p-6 text-white'>

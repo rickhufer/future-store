@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getCollections } from "@/services/shopify/collections";
 
+export const runtime = "edge";
+
 export default async function Layout({
   children,
 }: {
